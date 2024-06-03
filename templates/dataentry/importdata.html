@@ -7,12 +7,12 @@
         {% csrf_token %}
         <div class="mb-3">
             <label for="file_path" class="form-label">Upload CSV File</label>
-            <input type="file", name="file_path", class="form-control">
+            <input type="file" name="file_path" class="form-control" required>
         </div>
 
         <div class="mb-3">
             <label for="model_name" class="form-label">Select database table</label>
-            <select class="form-select", name="model_name">
+            <select class="form-select", name="model_name" required>
                 <option value="" disabled selected>Select</option>
             {%for model in all_models%}
                 <option value="{{model}}">{{model}}</option>

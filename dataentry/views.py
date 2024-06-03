@@ -2,6 +2,7 @@ from typing import List
 
 from django.apps import apps
 from django.conf import settings
+from django.contrib import messages
 from django.core.management import call_command
 from django.shortcuts import redirect, render
 
@@ -42,8 +43,9 @@ def import_data(request):
         # Call command
         try:
             call_command("importdata", file_path, model_name)
+            messages.success(request, "Data imported successfully!")
         except Exception as e:
-            raise e
+            messages.error(request, str(e))
 
         return redirect("import_data")
     else:
