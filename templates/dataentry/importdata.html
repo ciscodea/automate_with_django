@@ -12,12 +12,12 @@
 
         <div class="mb-3">
             <label for="model_name" class="form-label">Select database table</label>
-                <select class="form-select", name="model_name">
-                    <option value="" disabled selected>Select</option>
-                {%for model in all_models%}
-                    <option value="{{model}}">{{model}}</option>
-                {%endfor%}
-                </select>
+            <select class="form-select", name="model_name">
+                <option value="" disabled selected>Select</option>
+            {%for model in all_models%}
+                <option value="{{model}}">{{model}}</option>
+            {%endfor%}
+            </select>
         </div>
         <button type="submit" class="btn btn-primary">import data</button>
     </form>
